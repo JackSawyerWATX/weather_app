@@ -153,14 +153,14 @@ function GfGWeatherApp() {
           <div className="date">
             <span>{toSDateFunction()}</span>
           </div><br />
-          <span>Temperature: {Math.round(weather.data.main.temp)}°C / {convertToFahrenheit(weather.data.main.temp)}°F</span>
+          <span>Temperature: {convertToFahrenheit(weather.data.main.temp)}°F / {Math.round(weather.data.main.temp)}°C</span>
           <div className="description">
             {weather.data.weather[0].description}
           </div>
           <div className="min-max">
             <div>
-              <span className="min">Min: {Math.round(weather.data.main.temp_min)}°C / {convertToFahrenheit(weather.data.main.temp)}°F</span><br />
-              <span className="max">Max: {Math.round(weather.data.main.temp_max)}°C / {convertToFahrenheit(weather.data.main.temp)}°F</span>
+              <span className="min">Min: {convertToFahrenheit(weather.data.main.temp)}°F / {Math.round(weather.data.main.temp_min)}°C</span><br />
+              <span className="max">Max: {convertToFahrenheit(weather.data.main.temp)}°F / {Math.round(weather.data.main.temp_max)}°C</span>
             </div>
           </div>
           <div className="wind">
@@ -184,13 +184,13 @@ function GfGWeatherApp() {
           <div className="sunset">
             <span>Sunset: {new Date(weather.data.sys.sunset * 1000).toLocaleTimeString()}</span>
           </div>
-          <div className="timezone">
-            <span>Timezone: {weather.data.timezone / 3600} hours</span>
-          </div>
-          <div className="latlon">
+          {/* <div className="timezone">
+            <span>Timezone: +{weather.data.timezone / 3600} hours</span>
+          </div> */}
+          {/* <div className="latlon">
             <span>Latitude: {weather.data.coord.lat} </span>
             <span>Longitude: {weather.data.coord.lon}</span>
-          </div>
+          </div> */}
 
         </div>
       )}
